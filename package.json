@@ -1,0 +1,46 @@
+{
+  "name": "@remit_protocol/sdk",
+  "version": "0.1.0",
+  "description": "Scoped agent payments on Robinhood Chain testnet",
+  "type": "module",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "UNLICENSED",
+  "files": [
+    "dist",
+    "README.md",
+    "examples"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "prepack": "npm run build",
+    "example:pay": "node examples/pay.mjs",
+    "test": "npm run build && node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "viem": "^2.57.3"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/remit-protocol/Remit.git"
+  },
+  "homepage": "https://github.com/remit-protocol/Remit#readme",
+  "bugs": {
+    "url": "https://github.com/remit-protocol/Remit/issues"
+  }
+}
